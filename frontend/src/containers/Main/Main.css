@@ -1,0 +1,18 @@
+.Main {
+    text-align: center;
+}
+
+.Main__title {
+    letter-spacing: 1px;
+    word-spacing: 1.6px;
+    color: #263238;
+}
+
+.Main__txt {
+    font-weight: bold;
+}
+
+.Main__link {
+    margin-left: 15px;
+    font-weight: normal;
+}
