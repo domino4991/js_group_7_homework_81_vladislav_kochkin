@@ -12,7 +12,7 @@ app.use(cors());
 const run = async () => {
     await mongoose.connect("mongodb://localhost/shortLinks", {useNewUrlParser: true, useUnifiedTopology: true});
 
-    app.use("/links", links);
+    app.use("/", links);
 
     console.log("Connected to MongoDB");
 

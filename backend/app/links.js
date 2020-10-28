@@ -22,7 +22,7 @@ router.get('/:shortUrl', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/links', async (req, res) => {
     const linkData = req.body;
     const link = new Link(linkData);
     const links = await Link.find();
