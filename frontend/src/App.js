@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import Main from "./containers/Main/Main";
 
 function App() {
   return (
-    <div className="App">
-      <h1>asdas</h1>
-    </div>
+    <>
+      <Main />
+    </>
   );
 }
 
