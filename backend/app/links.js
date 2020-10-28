@@ -25,12 +25,18 @@ router.get('/:shortUrl', async (req, res) => {
 router.post('/', async (req, res) => {
     const linkData = req.body;
     const link = new Link(linkData);
-    link.shortUrl = nanoid(5);
-    try {
-        await link.save();
-        res.send(link);
-    } catch (e) {
-        res.status(400).send(e);
+    const links = await Link.find();
+    link.shortUrl = nanoid(6);
+    const uniqueShortUrl = links.filter(item => item.shortUrl === link.shortUrl);
+    if(uniqueShortUrl.length === 0) {
+        try {
+            await link.save();
+            res.send(link);
+        } catch (e) {
+            res.status(400).send(e);
+        }
+    } else {
+        res.status(400).send({error: "The short link is not unique, please try sending your request again"});
     }
 });
 
